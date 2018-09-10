@@ -23,8 +23,10 @@ agentid = []
 option = webdriver.ChromeOptions()
 option.add_argument("--incognito")
 
+## specifies the browser and driver file path##
 browser = webdriver.Chrome(executable_path='Documents\chromedriver', chrome_options=option)
 
+##small function to turn element into text and append to our list from earlier##
 def elementSearch(nameOfInfo, className):
     informationElement = browser.find_elements_by_class_name(className)
     informationList = [x.text for x in informationElement]
@@ -32,10 +34,10 @@ def elementSearch(nameOfInfo, className):
         nameOfInfo.append(i)
     return informationList
 
+##whatever site we are starting on##
 
-
-browser.get("https://idp.northstarmls.com/idp/Authn/UserPassword")
-
+browser.get("example.com")
+##wait for the element and then continue once found, timeout is set at 30secs in our constants##
 try:
     WebDriverWait(browser, timeout).until(EC.visibility_of_element_located((By.CLASS_NAME, "formtitle")))
 except TimeoutException:
