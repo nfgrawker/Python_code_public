@@ -1,7 +1,7 @@
 
 import pyodbc as db
 
-connection_string = "Trusted_Connection=yes; DRIVER={SQL Server}; SERVER=LAPTOP-5QTN78N9\SQLEXPRESS; DATABASE=JoshyJosh"
+connection_string = "Trusted_Connection=yes; DRIVER={SQL Server}; SERVER=; DATABASE="
 
 con = db.connect(connection_string)
 cur = con.cursor()

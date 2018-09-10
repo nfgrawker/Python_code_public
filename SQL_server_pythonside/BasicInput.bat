@@ -1,3 +1,3 @@
-C:\ProgramFiles\Anaconda3\python.exe C:\Users\joshu\WorkSpace\Digital-Assistant\BasicInput.py
+C:\ProgramFiles\Anaconda3\python.exe C:\Users\greg\WorkSpace\Digital\BasicInput.py
 
 pause
