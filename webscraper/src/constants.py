@@ -21,5 +21,5 @@ class getElementToCsv():
         self.elementList = elementSearch(self.name, self.element)
 
 ##secure info##
-password = "Chunks2!"
-username = "502045721"
+password = "password"
+username = "username"
