@@ -43,7 +43,8 @@ try:
 except TimeoutException:
     print("Timed out waiting for page to load")
     browser.quit()
-
+##inputting username and pass to login.##
+ ## note the specific site I was scraping needed to click the password box or it wouldnt accept##
 browser.find_element_by_id("j_username").send_keys(username)
 
 
@@ -58,8 +59,10 @@ except TimeoutException:
     print("Timed out waiting for page to load")
     browser.quit()
 
+##iterate throught the alphabet.
+##the site I scraped had 16k entries and would only display 5k so this was a quick way to break it down##
 for i in range(len(alphabet)):
-    browser.get("https://matrix.northstarmls.com/Matrix/Home")
+    browser.get("example.com/home")
     try:
         WebDriverWait(browser, timeout).until(EC.visibility_of_element_located((By.XPATH, '//*[@id="ctl02_m_ucSpeedBar_m_tbSpeedBar"]')))
     except TimeoutException:
@@ -70,9 +73,11 @@ for i in range(len(alphabet)):
     except TimeoutException:
         print("Timed out waiting for page to load")
         browser.quit()
+    ##to iterate through the JS I needed to know how many pages their were. 100 entries per page.##
     numofentries = browser.find_element_by_xpath('//*[@id="m_lblPagingSummary"]/b[3]')
     textentries = numofentries.text
     numofpages = math.ceil((int(textentries)/100))
+    ##using our function from earlier##
     elementSearch(firstnames, "d74m9")
     elementSearch(lastnames, "d74m7")
     elementSearch(agentid, "d74m11")
@@ -90,6 +95,7 @@ for i in range(len(alphabet)):
         elementSearch(phonenumber, "d74m12")
         elementSearch(broker, "d74m14")
 
+##making a list in a list for CSV##
 for i in range(len(firstnames)):
     new_list.append(firstnames[i])
     new_list.append(lastnames[i])

@@ -6,7 +6,7 @@
 alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 timeout = 30
 
-##functions needed ##
+##functions needed(outdated) ##
 
 
 def writeToCsv(nameOfInfo, list):
