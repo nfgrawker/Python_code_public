@@ -1,3 +1,3 @@
 # Python_code_public
 
-# random code of my from python
+# random code of mine with/related to python
